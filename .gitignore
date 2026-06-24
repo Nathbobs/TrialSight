@@ -1,0 +1,23 @@
+# Secrets
+.env
+.streamlit/secrets.toml
+
+# Data files
+data/bronze/
+data/silver/
+data/gold/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+#agent files
+.claude
+CLAUDE.md
