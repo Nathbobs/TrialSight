@@ -6,38 +6,7 @@ End-to-end clinical trial data intelligence platform. Fetches real trial data fr
 
 ## Architecture
 
-```
-ClinicalTrials.gov API (no key required)
-         │
-         ▼
-   [BRONZE LAYER]  pipeline/extract.py
-   Raw JSON → Parquet (data/bronze/)
-         │
-         ▼
-   [SILVER LAYER]  pipeline/transform.py
-   Cleaned, filtered, date-normalised
-         │
-         ▼
-   [GOLD LAYER]    pipeline/transform.py
-   Star schema: fact_trials + dim_condition/sponsor/phase
-         │
-    ┌────┴────┐
-    ▼         ▼
-Supabase   Qdrant Cloud
-PostgreSQL  Vector Store
-(dashboard) (semantic search)
-    └────┬────┘
-         ▼
-   [RAG LAYER]
-   HuggingFace all-MiniLM-L6-v2
-   + Groq Llama 3.3 70B
-         │
-         ▼
-   Streamlit App
-   ├── Dashboard Tab  (metrics, charts, trial browser)
-   └── RAG Chat Tab   (Q&A with citations + PDF upload)
-```
-
+![alt text](<TrialSight Architecture.png>)
 ---
 
 ## Tech Stack
