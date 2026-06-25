@@ -21,3 +21,7 @@ __pycache__/
 #agent files
 .claude
 CLAUDE.md
+
+#docs
+PORTFOLIO_WRITEUP.md
+TECHNICAL_REPORT.md
